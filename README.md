@@ -4,7 +4,7 @@
 
 ## Project Details
 * Relational database schema designed with ER tool. 
-https://rawgit.com/drewfidizzle/Soccer-League-Database/master/screenshots/ER_diagram.png
+![ER diagram] (https://rawgit.com/drewfidizzle/Soccer-League-Database/master/screenshots/ER_diagram.png)
 
 * Implementation uses [MYSQL](https://www.mysql.com/)
 
