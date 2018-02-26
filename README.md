@@ -4,7 +4,7 @@
 
 ## Project Details
 * Relational database schema designed with ER tool. 
-(screenshots/ER_diagram.png)
+!(screenshots/ER_diagram.png)
 
 * Implementation uses [MYSQL](https://www.mysql.com/)
 
