@@ -15,8 +15,8 @@
 
 
 
-## META 
-Developers: 
+## Developers: 
+
 * Michael Torres
 * Huy Nguyen
 * Monil Gandhi
