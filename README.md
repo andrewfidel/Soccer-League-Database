@@ -4,6 +4,14 @@
 
 ## Project Details
 * Relational database schema designed with ER tool. 
+ER diagram:
+![mutt dark](https://github.com/drewfidizzle/Soccer-League-Database/blob/master/screenshots/ER_diagram.png)
+
+Logical Schema: 
+![mutt dark](https://github.com/drewfidizzle/Soccer-League-Database/blob/master/screenshots/Logical_Schema.png)
 
 * Implementation uses [MYSQL](https://www.mysql.com/), [PHP](http://php.net), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), & [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+
+
 
