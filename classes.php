@@ -1,47 +1,48 @@
 <?php
 class Player {
-    private $id;
-    private $first_name;
-    private $last_name;
-    private $nickname;
-    private $jersey_number;
-    private $team;
+    private $PlayerID;
+    private $FirstName;
+    private $LastName;
+    private $Nickname;
+    private $Number;
+    private $TeamID;
     
-    function __construct($id, $first, $last, $number, $team, $nickname = "") {
-        $this->id = $id;
-        $this->first_name = $first;
-        $this->last_name = $last;
-        $this->nickname = $nickname;
-        $this->jersey_number = $number;
-        $this->team = $team;
+    function __construct($id = NULL, $first = NULL, $last = NULL, 
+                            $number = NULL, $team = NULL, $nickname = NULL) {
+        $this->PlayerID = $id;
+        $this->FirstName = $first;
+        $this->LastName = $last;
+        $this->Nickname = $nickname;
+        $this->Number = $number;
+        $this->TeamID = $team;
     }
     
-    public function getId()             { return $this->id; }
-    public function getFirstName()      { return $this->first_name; }
-    public function getLastName()       { return $this->last_name; }
-    public function getNickName()       { return $this->nick_name; }
-    public function getJerseyNumber()   { return $this->jersey_number; }
-    public function getTeamName()       { return $this->team; }
+    public function getId()             { return $this->PlayerID; }
+    public function getFirstName()      { return $this->FirstName; }
+    public function getLastName()       { return $this->LastName; }
+    public function getNickName()       { return $this->Nickname; }
+    public function getJerseyNumber()   { return $this->Number; }
+    public function getTeamName()       { return $this->TeamID; }
     
 }
 
 class Team {
-    private $id;
-    private $name;
-    private $city;
-    private $league;
+    private $TeamID;
+    private $TeamName;
+    private $City;
+    private $LeagueID;
     
-    function __construct($id, $name, $city, $league) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->city = $city;
-        $this->league = $league;
+    function __construct($id = NULL, $name = NULL, $city = NULL, $league = NULL) {
+        $this->TeamID = $id;
+        $this->TeamName = $name;
+        $this->City = $city;
+        $this->LeagueID = $league;
     }
     
-    public function getId()             { return $this->id; }
-    public function getName()           { return $this->name; }
-    public function getCity()           { return $this->city; }
-    public function getLeagueName()     { return $this->league; }
+    public function getId()             { return $this->TeamID; }
+    public function getName()           { return $this->TeamName; }
+    public function getCity()           { return $this->City; }
+    public function getLeagueName()     { return $this->LeagueID; }
 
 }
 
@@ -50,7 +51,7 @@ class League {
     private $LeagueName; 
     private $Country;
     
-    function __construct($id = null, $name = null, $ctry = null) {
+    function __construct($id = NULL, $name = NULL, $ctry = NULL) {
         $this->LeagueID = $id;
         $this->LeagueName = $name;
         $this->Country = $ctry;
