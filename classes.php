@@ -1,6 +1,6 @@
 <?php
 class Player {
-    private $id
+    private $id;
     private $first_name;
     private $last_name;
     private $nickname;
@@ -46,19 +46,19 @@ class Team {
 }
 
 class League {
-    private $id;
-    private $name;
-    private $country;
+    private $LeagueID; // Make sure variable name exactly matches the column name
+    private $LeagueName; 
+    private $Country;
     
-    function __construct($id, $name, $country) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->country = $country;
-    }
+    /*function __construct($id, $name, $ctry) {
+        $this->LeagueID = $id;
+        $this->LeagueName = $name;
+        $this->Country = $ctry;
+    }*/
     
-    public function getId()             { return $this->id; }
-    public function getName()           { return $this->name; }
-    public function getCountry()        { return $this->country; }
+    public function getId()             { return $this->LeagueID; }
+    public function getName()           { return $this->LeagueName; }
+    public function getCountry()        { return $this->Country; }
 }
 
 ?>
