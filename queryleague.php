@@ -52,7 +52,7 @@
         
             // Fetch the matching database table rows.
             $ps->execute();
-            $ps->setFetchMode(PDO::FETCH_CLASS, "League");
+            $ps->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "League", [null, null, null]);
             
             // Construct the HTML table row by row.
             while ($league = $ps->fetch()) {
@@ -60,7 +60,7 @@
                 print "            <td>" . $league->getId()      . "</td>\n";
                 print "            <td>" . $league->getName()    . "</td>\n";
                 print "            <td>" . $league->getCountry() . "</td>\n";
-                print "        </tr>\n";
+                print "        </tr>\n";    
             }
             
             print "    </table>\n";

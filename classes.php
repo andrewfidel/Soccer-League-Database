@@ -50,11 +50,11 @@ class League {
     private $LeagueName; 
     private $Country;
     
-    /*function __construct($id, $name, $ctry) {
+    function __construct($id = null, $name = null, $ctry = null) {
         $this->LeagueID = $id;
         $this->LeagueName = $name;
         $this->Country = $ctry;
-    }*/
+    }
     
     public function getId()             { return $this->LeagueID; }
     public function getName()           { return $this->LeagueName; }
