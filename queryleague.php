@@ -52,7 +52,7 @@
         
             // Fetch the matching database table rows.
             $ps->execute();
-            $ps->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "League", [null, null, null]);
+            $ps->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "League");
             
             // Construct the HTML table row by row.
             while ($league = $ps->fetch()) {
