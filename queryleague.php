@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Query Results</title>
+    <style>
+    body
+    {
+        background-color: bisque
+    }
+    
+    </style>
 </head>
 
 <body>
@@ -14,8 +21,8 @@
             
         try {
             // Connect to the database.
-            $con = new PDO("mysql:host=localhost;dbname=tngf",
-                           "tngf", "sesame");
+            $con = new PDO("mysql:host=localhost;dbname=CS157B_PROJECT",
+                           "root", "");
             $con->setAttribute(PDO::ATTR_ERRMODE,
                                PDO::ERRMODE_EXCEPTION);
                 
