@@ -21,8 +21,8 @@
             
         try {
             // Connect to the database.
-            $con = new PDO("mysql:host=localhost;dbname=CS157B_PROJECT",
-                           "root", "");
+            $con = new PDO("mysql:host=localhost;dbname=tngf",
+                           "tngf", "sesame");
             $con->setAttribute(PDO::ATTR_ERRMODE,
                                PDO::ERRMODE_EXCEPTION);
                 
