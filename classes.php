@@ -22,7 +22,7 @@ class Player {
     public function getLastName()       { return $this->LastName; }
     public function getNickName()       { return $this->Nickname; }
     public function getJerseyNumber()   { return $this->Number; }
-    public function getTeamName()       { return $this->TeamID; }
+    public function getTeamID()         { return $this->TeamID; }
     
 }
 
