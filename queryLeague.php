@@ -26,8 +26,8 @@
             print "        </tr>\n";
         }
         
-        $leaguename = filter_input(INPUT_GET, "inputName");
-        $country = filter_input(INPUT_GET, "inputCountry");
+        $leaguename = filter_input(INPUT_POST, "inputName");
+        $country = filter_input(INPUT_POST, "inputCountry");
             
         try {
             // Connect to the database.

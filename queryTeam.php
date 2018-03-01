@@ -28,8 +28,8 @@
             print "        </tr>\n";
         }
         
-        $teamname = filter_input(INPUT_GET, "inputName");
-        $teamcity = filter_input(INPUT_GET, "inputCity");
+        $teamname = filter_input(INPUT_POST, "inputName");
+        $teamcity = filter_input(INPUT_POST, "inputCity");
             
         try {
             // Connect to the database.
