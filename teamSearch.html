@@ -2,26 +2,28 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>League</title>
+    <title>Team Query</title>
     <style>
-    body
-    {
-        background-color: bisque
-    }
-    
+    	body
+    	{
+    	    background-color: bisque
+    	}
     </style>
 
 
 </head>
 
 <body>
-    <form action="queryleague.php"
-          method="get">
+    <form action="queryTeam.php" method="get">
         <fieldset>
             <legend>User input</legend>
             <p>
-                <label>League Name:</label>
+                <label>Team Name:</label>
                 <input name="inputName" type="text" />
+            </p>
+            <p>
+                <label>Team City:</label>
+                <input name="inputCity" type="text" />
             </p>
             
             <p>

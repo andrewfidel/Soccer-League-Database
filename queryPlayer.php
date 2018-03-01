@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Query Results</title>
+    <title>Player Query Results</title>
     <style>
     body
     {
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1>Query Results</h1>
+    <h1>Player Query Results</h1>
     
     <p>
         <?php

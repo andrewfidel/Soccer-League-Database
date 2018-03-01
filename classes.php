@@ -42,7 +42,7 @@ class Team {
     public function getId()             { return $this->TeamID; }
     public function getName()           { return $this->TeamName; }
     public function getCity()           { return $this->City; }
-    public function getLeagueName()     { return $this->LeagueID; }
+    public function getLeagueId()       { return $this->LeagueID; }
 
 }
 
