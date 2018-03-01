@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2018 at 06:19 AM
+-- Generation Time: Mar 01, 2018 at 06:32 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `tngf`
 --
+CREATE DATABASE IF NOT EXISTS `tngf` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `tngf`;
 
 -- --------------------------------------------------------
 
