@@ -12,6 +12,8 @@
 
 ![mutt dark](https://github.com/drewfidizzle/Soccer-League-Database/blob/master/screenshots/Logical_Schema.png)
 
+![mutt dark](https://github.com/drewfidizzle/Soccer-League-Database/blob/master/screenshots/dimenion-fact-star-schema.PNG)
+
 
 
 
