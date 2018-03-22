@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2018 at 07:50 AM
+-- Generation Time: Mar 22, 2018 at 02:37 AM
 -- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,12 +46,24 @@ CREATE TABLE `goalsbyplayerbymatch` (
 
 INSERT INTO `goalsbyplayerbymatch` (`MinuteScored`, `SecondScored`, `GID`, `TeamKey`, `PlayerKey`, `LeagueKey`, `MatchKey`) VALUES
 (15, 51, 1, 1, 1, 1, 1),
-(35, 11, 2, 1, 2, 1, 1),
-(87, 9, 3, 2, 3, 1, 1),
-(10, 55, 4, 3, 5, 2, 2),
-(44, 15, 5, 3, 5, 2, 2),
-(60, 36, 6, 3, 6, 2, 2),
-(80, 19, 7, 4, 7, 2, 2);
+(25, 17, 2, 1, 1, 1, 6),
+(35, 11, 3, 1, 2, 1, 1),
+(15, 12, 4, 1, 2, 1, 6),
+(87, 9, 5, 2, 3, 1, 1),
+(50, 50, 6, 2, 3, 1, 6),
+(75, 59, 7, 2, 3, 1, 6),
+(10, 55, 8, 3, 5, 2, 2),
+(44, 15, 9, 3, 5, 2, 2),
+(60, 36, 10, 3, 6, 2, 2),
+(80, 19, 11, 4, 7, 2, 2),
+(41, 39, 12, 5, 9, 3, 4),
+(78, 10, 13, 5, 9, 3, 4),
+(25, 30, 14, 5, 10, 3, 4),
+(55, 21, 15, 6, 11, 3, 4),
+(10, 17, 16, 7, 13, 4, 5),
+(78, 19, 17, 7, 13, 4, 5),
+(29, 30, 18, 7, 14, 4, 5),
+(36, 52, 19, 8, 16, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -71,10 +83,14 @@ CREATE TABLE `goalsbyteambymatch` (
 --
 
 INSERT INTO `goalsbyteambymatch` (`TotalGoalsScored`, `TeamKey`, `MatchKey`, `LeagueKey`) VALUES
-(2, 1, 1, 1),
-(1, 2, 1, 1),
+(4, 1, 1, 1),
+(3, 2, 1, 1),
 (3, 3, 2, 2),
-(1, 4, 2, 2);
+(1, 4, 2, 2),
+(3, 5, 4, 3),
+(1, 6, 4, 3),
+(3, 7, 5, 4),
+(1, 8, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -97,7 +113,8 @@ INSERT INTO `league` (`LeagueKey`, `LeagueID`, `LeagueName`, `LeagueCountry`) VA
 (1, 1, 'Premier League', 'England'),
 (2, 2, 'La Liga', 'Spain'),
 (3, 3, 'Series A', 'Italy'),
-(4, 4, 'Bundesliga', 'Germany');
+(4, 4, 'Bundesliga', 'Germany'),
+(5, 5, 'Ligue 1', 'France');
 
 -- --------------------------------------------------------
 
@@ -124,7 +141,11 @@ CREATE TABLE `match_details` (
 
 INSERT INTO `match_details` (`MatchKey`, `MatchID`, `MatchDate`, `MatchLeagueName`, `MatchHomeTeamName`, `MatchAwayTeamName`, `MatchDayOfWeek`, `MatchDayOfMonth`, `MatchMonth`, `MatchYear`) VALUES
 (1, 1, '2017-10-25', 'Premier League', 'Manchester United', 'Chelsea', 4, 25, 10, 2017),
-(2, 2, '2017-11-05', 'La Liga', 'Real Madrid', 'Barcelona', 1, 5, 11, 2017);
+(2, 2, '2017-11-05', 'La Liga', 'Real Madrid', 'Barcelona', 1, 5, 11, 2017),
+(3, 3, '2017-12-11', 'Premier League', 'Tottenham', 'Chelsea', 2, 11, 12, 2017),
+(4, 4, '2018-01-05', 'Series A', 'Juventus', 'AC Milan', 6, 5, 1, 2018),
+(5, 5, '2018-01-15', 'Bundesliga', 'FC Bayern', 'Dortmund', 2, 15, 1, 2018),
+(6, 6, '2018-02-05', 'Premier League', 'Chelsea', 'Manchester United', 2, 5, 2, 2018);
 
 -- --------------------------------------------------------
 
@@ -152,10 +173,10 @@ INSERT INTO `player` (`PlayerKey`, `PlayerID`, `PlayerFirstName`, `PlayerLastNam
 (2, 2, 'Alexis', 'Sanchez', NULL, 7, 'Manchester United', NULL),
 (3, 3, 'Eden', 'Hazard', NULL, 10, 'Chelsea', NULL),
 (4, 4, 'N\'Golo', 'Kante', NULL, 7, 'Chelsea', NULL),
-(5, 5, 'Lionel', 'Messi', NULL, 10, 'Barcelona', NULL),
+(5, 5, 'Lionel', 'Messi', 'La Pulga', 10, 'Barcelona', NULL),
 (6, 6, 'Luis', 'Suarez', NULL, 9, 'Barcelona', NULL),
-(7, 7, 'Cristiano', 'Ronaldo', NULL, 7, 'Real Madrid', NULL),
-(8, 8, 'Gareth', 'Bale', NULL, 11, 'Real Madrid', NULL),
+(7, 7, 'Cristiano', 'Ronaldo', 'CR7', 7, 'Real Madrid', NULL),
+(8, 8, 'Gareth', 'Bale', 'The Cannon', 11, 'Real Madrid', NULL),
 (9, 9, 'Gonzalo', 'Higuain', NULL, 9, 'Juventus', NULL),
 (10, 10, 'Paulo', 'Dybala', NULL, 10, 'Juventus', NULL),
 (11, 11, 'Leonardo', 'Bonucci', NULL, 19, 'AC Milan', NULL),
@@ -191,7 +212,11 @@ INSERT INTO `team` (`TeamKey`, `TeamID`, `TeamName`, `TeamCity`, `TeamLeagueName
 (5, 5, 'Juventus', 'Turin', 'Series A'),
 (6, 6, 'AC Milan', 'Milan', 'Series A'),
 (7, 7, 'FC Bayern', 'Munich', 'Bundesliga'),
-(8, 8, 'Dortmund', 'Dortmund', 'Bundesliga');
+(8, 8, 'Dortmund', 'Dortmund', 'Bundesliga'),
+(9, 9, 'Liverpool', 'Liverpool', 'Premier League'),
+(10, 10, 'Arsenal', 'London', 'Premier League'),
+(11, 11, 'Manchester City', 'Manchester', 'Premier League'),
+(12, 12, 'Tottenham', 'London', 'Premier League');
 
 --
 -- Indexes for dumped tables
@@ -247,7 +272,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT for table `goalsbyplayerbymatch`
 --
 ALTER TABLE `goalsbyplayerbymatch`
-  MODIFY `GID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `GID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `league`
@@ -259,7 +284,7 @@ ALTER TABLE `league`
 -- AUTO_INCREMENT for table `match_details`
 --
 ALTER TABLE `match_details`
-  MODIFY `MatchKey` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MatchKey` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `player`

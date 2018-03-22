@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2018 at 06:32 AM
+-- Generation Time: Mar 22, 2018 at 02:36 AM
 -- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,11 +43,23 @@ CREATE TABLE `goal` (
 --
 
 INSERT INTO `goal` (`MinuteScored`, `SecondScored`, `TeamID`, `PlayerID`, `MatchID`) VALUES
+(10, 17, 7, 13, 5),
 (10, 55, 3, 5, 2),
+(15, 12, 1, 2, 6),
 (15, 51, 1, 1, 1),
+(25, 17, 1, 1, 6),
+(25, 30, 5, 10, 4),
+(29, 30, 7, 14, 5),
 (35, 11, 1, 2, 1),
+(36, 52, 8, 16, 5),
+(41, 39, 5, 9, 4),
 (44, 15, 3, 5, 2),
+(50, 50, 2, 3, 6),
+(55, 21, 6, 11, 4),
 (60, 36, 3, 6, 2),
+(75, 59, 2, 3, 6),
+(78, 10, 5, 9, 4),
+(78, 19, 7, 13, 5),
 (80, 19, 4, 7, 2),
 (87, 9, 2, 3, 1);
 
@@ -71,7 +83,8 @@ INSERT INTO `league` (`LeagueID`, `LeagueName`, `Country`) VALUES
 (1, 'Premier League', 'England'),
 (2, 'La Liga', 'Spain'),
 (3, 'Series A', 'Italy'),
-(4, 'Bundesliga', 'Germany');
+(4, 'Bundesliga', 'Germany'),
+(5, 'Ligue 1', 'France');
 
 -- --------------------------------------------------------
 
@@ -91,7 +104,11 @@ CREATE TABLE `match_details` (
 
 INSERT INTO `match_details` (`MatchID`, `Date`, `LeagueID`) VALUES
 (1, '2017-10-25', 1),
-(2, '2017-11-05', 2);
+(2, '2017-11-05', 2),
+(3, '2017-12-11', 1),
+(4, '2018-01-05', 3),
+(5, '2018-01-15', 4),
+(6, '2018-02-05', 1);
 
 -- --------------------------------------------------------
 
@@ -117,10 +134,10 @@ INSERT INTO `player` (`PlayerID`, `FirstName`, `LastName`, `Nickname`, `Number`,
 (2, 'Alexis', 'Sanchez', NULL, 7, 1),
 (3, 'Eden', 'Hazard', NULL, 10, 2),
 (4, 'N\'Golo', 'Kante', NULL, 7, 2),
-(5, 'Lionel', 'Messi', NULL, 10, 3),
+(5, 'Lionel', 'Messi', 'La Pulga', 10, 3),
 (6, 'Luis', 'Suarez', NULL, 9, 3),
-(7, 'Cristiano', 'Ronaldo', NULL, 7, 4),
-(8, 'Gareth', 'Bale', NULL, 11, 4),
+(7, 'Cristiano', 'Ronaldo', 'CR7', 7, 4),
+(8, 'Gareth', 'Bale', 'The Cannon', 11, 4),
 (9, 'Gonzalo', 'Higuain', NULL, 9, 5),
 (10, 'Paulo', 'Dybala', NULL, 10, 5),
 (11, 'Leonardo', 'Bonucci', NULL, 19, 6),
@@ -147,35 +164,21 @@ CREATE TABLE `player_position` (
 
 INSERT INTO `player_position` (`Position`, `PlayerID`) VALUES
 ('CAM', 10),
-('CAM', 15),
 ('CB', 11),
-('CDM', 1),
 ('CDM', 4),
-('CF', 5),
 ('CF', 15),
 ('CM', 1),
-('CM', 4),
-('CM', 15),
 ('GK', 12),
-('LM', 2),
-('LM', 16),
 ('LW', 2),
 ('LW', 3),
 ('LW', 7),
 ('LW', 16),
-('RM', 14),
-('RW', 5),
 ('RW', 8),
 ('RW', 14),
-('ST', 2),
 ('ST', 5),
 ('ST', 6),
-('ST', 7),
-('ST', 8),
 ('ST', 9),
-('ST', 10),
-('ST', 13),
-('ST', 16);
+('ST', 13);
 
 -- --------------------------------------------------------
 
@@ -195,9 +198,17 @@ CREATE TABLE `playsin` (
 
 INSERT INTO `playsin` (`IsHome`, `TeamID`, `MatchID`) VALUES
 (1, 1, 1),
+(0, 1, 6),
 (0, 2, 1),
+(0, 2, 3),
+(1, 2, 6),
 (0, 3, 2),
-(1, 4, 2);
+(1, 4, 2),
+(1, 5, 4),
+(0, 6, 4),
+(1, 7, 5),
+(0, 8, 5),
+(1, 12, 3);
 
 -- --------------------------------------------------------
 
@@ -224,7 +235,11 @@ INSERT INTO `team` (`TeamID`, `TeamName`, `City`, `LeagueID`) VALUES
 (5, 'Juventus', 'Turin', 3),
 (6, 'AC Milan', 'Milan', 3),
 (7, 'FC Bayern', 'Munich', 4),
-(8, 'Dortmund', 'Dortmund', 4);
+(8, 'Dortmund', 'Dortmund', 4),
+(9, 'Liverpool', 'Liverpool', 1),
+(10, 'Arsenal', 'London', 1),
+(11, 'Manchester City', 'Manchester', 1),
+(12, 'Tottenham', 'London', 1);
 
 --
 -- Indexes for dumped tables
@@ -288,13 +303,13 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT for table `league`
 --
 ALTER TABLE `league`
-  MODIFY `LeagueID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `LeagueID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `match_details`
 --
 ALTER TABLE `match_details`
-  MODIFY `MatchID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `MatchID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `player`
@@ -306,7 +321,7 @@ ALTER TABLE `player`
 -- AUTO_INCREMENT for table `team`
 --
 ALTER TABLE `team`
-  MODIFY `TeamID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `TeamID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
