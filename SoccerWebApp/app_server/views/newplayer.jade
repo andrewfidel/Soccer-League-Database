@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1= title
+    form#formAddPlayer(name="addplayer",method="post",action="/addplayer")
+        input#inputPlayerFirstName(type="text", placeholder="firstname", name="playernamefirst")
+        input#inputPlayerLastName(type="text", placeholder="lastnameemail", name="playernamelast")
+        button#btnSubmit(type="submit") submit
